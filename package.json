@@ -1,0 +1,55 @@
+{
+  "name": "svelte-3-blog",
+  "description": "this is a simple svelte v3 boilerplate",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "sapper dev",
+    "build": "sapper build",
+    "export": "sapper export",
+    "start": "node __sapper__/build",
+    "cy:run": "cypress run",
+    "cy:open": "cypress open",
+    "test": "run-p --race dev cy:run"
+  },
+  "dependencies": {
+    "compression": "^1.7.3",
+    "devalue": "^1.1.0",
+    "do-not-zip": "^1.0.0",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "golden-fleece": "^1.0.9",
+    "locate-character": "^2.0.5",
+    "marked": "^0.6.0",
+    "node-fetch": "^2.3.0",
+    "passport": "^0.4.0",
+    "passport-github": "^1.1.0",
+    "session-file-store": "^1.2.0",
+    "sirv": "^0.2.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/runtime": "^7.2.0",
+    "chokidar": "^2.0.4",
+    "eslint-plugin-svelte3": "sveltejs/eslint-plugin-svelte3.git#semver:*",
+    "npm-run-all": "^4.1.5",
+    "rollup": "^1.1.0",
+    "rollup-plugin-babel": "^4.2.0",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-json": "^3.1.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-replace": "^2.1.0",
+    "rollup-plugin-svelte": "^5.0.1",
+    "rollup-plugin-terser": "^4.0.2",
+    "sapper": "sveltejs/sapper#svelte-3",
+    "svelte": "sveltejs/svelte#master"
+  },
+  "website": {
+    "title": "Blog",
+    "description": "A blog whatever about",
+    "url": "https://customdomain.blog"
+  }
+}

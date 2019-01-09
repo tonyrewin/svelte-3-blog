@@ -1,0 +1,60 @@
+<script context="module">
+	export async function preload() {
+		const posts = await this.fetch(`api/blog`).then(r => r.json());
+		return { posts };
+	}
+</script>
+<script>
+	export let posts;
+</script>
+<style>
+	.container {
+		position: relative;
+		margin: 10rem auto;
+		max-width: 120rem;
+	}
+
+	.container ul {
+		list-style: none;
+	}
+
+	li.post-box {
+		padding: 5%;
+	}
+
+	li.post-box a.post-read {
+		display: block;
+		float: right;
+		bottom: 0;
+	}
+
+	/* max line-length ~60 chars */
+	li:not(.post-box) > p {
+		max-width: var(--linemax)
+	}
+
+	h2 { color: white }
+
+</style>
+
+<svelte:head>
+	<title>Blog • Homepage</title>
+</svelte:head>
+
+<section class='container'>
+	<ul class='grid stretch'>
+		{#await posts}
+			<p>loading</p>
+		{:then posts}
+			{#each posts.slice(0,5) as post}
+
+			<li class='post-box bg-second white'>
+				<h2 style='padding:2.4rem 0 0 0'>{ post.metadata.title }</h2>
+				<p>{ post.metadata.description }</p>
+				<a class="post-read" href="blog/{ post.slug }">read</a>
+			</li>
+
+			{/each}
+		{/await}
+	</ul>
+</section>

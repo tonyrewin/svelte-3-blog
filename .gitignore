@@ -1,0 +1,5 @@
+node_modules
+.DS_Store
+__sapper__
+cypress/videos
+cypress/screenshots
